@@ -1,0 +1,21 @@
+name: Verify documentation synchronization
+on:
+  schedule:
+    - cron: '17 9 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  synchronize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with: {path: wiki}
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with: {repository: ramideltoro/local-server-infra, path: infra}
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with: {repository: ramideltoro/local-server-observability, path: portal}
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with: {node-version: '22'}
+      - run: node wiki/scripts/source-lock.mjs check local-server-infra infra
+      - run: node wiki/scripts/source-lock.mjs check local-server-observability portal

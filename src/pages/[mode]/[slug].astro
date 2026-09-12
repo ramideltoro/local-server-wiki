@@ -1,0 +1,7 @@
+---
+import Layout from '../../layouts/Wiki.astro';
+import topics from '../../data/topics.json';
+export function getStaticPaths(){return topics.flatMap(topic=>['summary','technical','expert'].map(mode=>({params:{mode,slug:topic.slug},props:{topic,mode}})));}
+const {topic,mode}=Astro.props;
+---
+<Layout topic={topic} mode={mode} />

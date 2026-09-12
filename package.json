@@ -1,0 +1,1 @@
+{"name":"local-server-wiki","version":"1.0.0","private":true,"type":"module","scripts":{"dev":"astro dev --host 127.0.0.1","build":"node scripts/validate.mjs && astro build","test":"node scripts/validate.mjs","preview":"astro preview --host 127.0.0.1"},"dependencies":{"astro":"^5.0.0","marked":"^16.0.0"}}
