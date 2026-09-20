@@ -1,6 +1,6 @@
 {
   "local-server-infra": {
-    "sha256": "5fd9d1a81ce01b18ab66d0bb7e03e7523476532dd84c2a9b6deacb7bbf892e1e"
+    "sha256": "1f1fc064e7b0cb6804437d46c20aa2e33269dcaea560a558202e293064d130fd"
   },
   "local-server-observability": {
     "sha256": "8525235745b8f9e7d0a0e323493346c82d8388f4e7ea2272f6b3eb9f4ee60d51"
